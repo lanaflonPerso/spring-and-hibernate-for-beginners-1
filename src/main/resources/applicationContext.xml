@@ -4,7 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="myCoach" class="com.stanchenko.BasketballCoach" />
+    <bean id="myFortune" class="com.stanchenko.HappyFortuneService"/>
+
+    <bean id="myCoach" class="com.stanchenko.TrackCoach">
+        <constructor-arg ref="myFortune"/>
+    </bean>
 
     <bean id="loggerConfig" class="com.stanchenko.LoggerConfig" init-method="initLogger">
         <property name="rootLoggerLevel" value="FINE" />
