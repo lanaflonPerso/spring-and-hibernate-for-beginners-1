@@ -8,6 +8,8 @@
 
     <bean id="myCoach" class="com.stanchenko.CricketCoach">
         <property name="fortuneService" ref="myFortune"/>
+        <property name="email" value="qwerty@gmail.com"/>
+        <property name="team" value="Qwerty"/>
     </bean>
 
     <bean id="loggerConfig" class="com.stanchenko.LoggerConfig" init-method="initLogger">
