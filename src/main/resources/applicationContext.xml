@@ -6,8 +6,8 @@
 
     <bean id="myFortune" class="com.stanchenko.HappyFortuneService"/>
 
-    <bean id="myCoach" class="com.stanchenko.TrackCoach">
-        <constructor-arg ref="myFortune"/>
+    <bean id="myCoach" class="com.stanchenko.CricketCoach">
+        <property name="fortuneService" ref="myFortune"/>
     </bean>
 
     <bean id="loggerConfig" class="com.stanchenko.LoggerConfig" init-method="initLogger">
