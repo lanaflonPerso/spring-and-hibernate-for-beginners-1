@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:config="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        https://www.springframework.org/schema/beans/spring-beans.xsd">
+        https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <config:property-placeholder location="classpath:sports.properties"/>
 
     <bean id="myFortune" class="com.stanchenko.HappyFortuneService"/>
 
     <bean id="myCoach" class="com.stanchenko.CricketCoach">
         <property name="fortuneService" ref="myFortune"/>
-        <property name="email" value="qwerty@gmail.com"/>
-        <property name="team" value="Qwerty"/>
+        <property name="email" value="${sports.email}"/>
+        <property name="team" value="${sports.team}"/>
     </bean>
 
     <bean id="loggerConfig" class="com.stanchenko.LoggerConfig" init-method="initLogger">
