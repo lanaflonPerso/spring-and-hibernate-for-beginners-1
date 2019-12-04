@@ -6,4 +6,6 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
     <config:component-scan base-package="com.stanchenko" />
+
+    <config:property-placeholder location="sports.properties"/>
 </beans>
