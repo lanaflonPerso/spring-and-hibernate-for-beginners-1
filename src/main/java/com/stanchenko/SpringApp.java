@@ -10,15 +10,12 @@ public class SpringApp {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
 
         // retrieve bean from spring container
-        CricketCoach myCoach = applicationContext.getBean("myCoach", CricketCoach.class);
+        Coach myCoach = applicationContext.getBean("tennisCoach", Coach.class);
 
         // call methods on the bean
         System.out.println(myCoach.getDailyWorkout());
 
         System.out.println(myCoach.getDailyFortune());
-
-        System.out.println(myCoach.getEmail());
-        System.out.println(myCoach.getTeam());
 
         // close the context
         applicationContext.close();
